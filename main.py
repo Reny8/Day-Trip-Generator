@@ -1,4 +1,6 @@
 import random
+def display_title():
+    print("Welcome to the Day Trip Generator!")
 destinations = ["Upstate New York", "Salem, Massachusetts", "Portland, Oregon", "Austin, Texas", "Baltimore, Maryland", "Jim Thorpe, Pennsylvania","Miami, Florida", "Phoenix, Arizona"]
 def destination_choice():
     random_destination = random.choice(destinations)
@@ -69,7 +71,7 @@ def complete(dest,rest,trans,entertain):
             satisfied = input("Are you satisfied with your choices? y/n: ")
             print(f"You will enjoy a day trip at {dest} where you will enjoy a meal at {rest}. You will use {trans} to get there. You will enjoy a {entertain}!")
             return
-
+display_title()
 final_destination = destination_choice()
 final_restaurant = restaurant_choice()
 final_transportation = transportation_choice()
