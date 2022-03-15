@@ -25,16 +25,16 @@ def complete(dest, rest, trans, entertain):
     while satisfied == "n":
         change = input("Type 1 for change destination, 2 for restaurant, 3 for transportation or 4 for entertainment. Press 0 for no more changes: ").lower()
         if change == "1":
-            dest = list_loop(dest)
+            final_destination = list_loop(destinations)
         elif change == "2":
-            rest = list_loop(rest)
+            final_restaurant = list_loop(restaurants)
         elif change == "3":
-            trans = list_loop(trans)
+            final_transportation = list_loop(transportations)
         elif change == "4":
-            entertain = list_loop(entertain)
+            final_entertainment = list_loop(entertainments)
         else:
             satisfied = input("Are you satisfied with your choices? y/n: ")
-            print(f"You will enjoy a day trip at {dest} where you will enjoy a meal at {rest}. You will use {trans} to get there. You will enjoy a {entertain}!")
+            print(f"You will enjoy a day trip at {final_destination} where you will enjoy a meal at {final_restaurant}. You will use {final_transportation} to get there. You will enjoy a {final_entertainment}!")
             return
 display_title()
 final_destination = list_loop(destinations)
