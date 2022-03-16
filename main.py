@@ -11,9 +11,8 @@ def list_loop(list):
     if user_reply == "y" or user_reply == "yes":
         return random_pick 
     while user_reply == "n" or user_reply == "no":
-        if user_reply == "n" or user_reply == "no":
-            random_pick = random.choice(list)
-            user_reply = input(f"What about {random_pick}? y/n: ").lower()
+        random_pick = random.choice(list)
+        user_reply = input(f"What about {random_pick}? y/n: ").lower()
         if user_reply == "y" or user_reply == "yes":
             return random_pick
 
