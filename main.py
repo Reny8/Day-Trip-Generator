@@ -33,7 +33,7 @@ def complete(dest, rest, trans, entertain):
             final_entertainment = list_loop(entertainments)
         else:
             satisfied = input("Are you satisfied with your choices? y/n: ").lower()
-            print(f"You will enjoy a day trip at {final_destination} where you will enjoy a meal at {final_restaurant}. You will use {final_transportation} to get there. You will enjoy a {final_entertainment}!")
+            print(f"You will enjoy a day trip at {dest} where you will enjoy a meal at {rest}. You will use {trans} to get there. You will enjoy a {entertain}!")
             return
 display_title()
 final_destination = list_loop(destinations)
