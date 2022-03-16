@@ -5,9 +5,9 @@ transportations = ["bus", "subway", "Uber", "cab", "rent-a-car", "biking"]
 entertainments = ["movie", "concert", "hiking/biking Trail", "sporting event", "comic convention", "comedy club show"]
 def display_title():
     print("Welcome to the Day Trip Generator!")
-def list_loop(list):
+def list_loop(list, topic):
     random_pick = random.choice(list)
-    user_reply = input(f"How does {random_pick} sound for your? y/n: ").lower()
+    user_reply = input(f"How does {random_pick} sound for your {topic}? y/n: ").lower()
     if user_reply == "y" or user_reply == "yes":
         return random_pick 
     while user_reply == "n" or user_reply == "no":
@@ -23,21 +23,21 @@ def complete(dest, rest, trans, entertain):
     while satisfied == "n":
         change = input("Type 1 for change destination, 2 for restaurant, 3 for transportation or 4 for entertainment. Press 0 for no more changes: ").lower()
         if change == "1":
-            final_destination = list_loop(destinations)
+            final_destination = list_loop(destinations, "destination")
         elif change == "2":
-            final_restaurant = list_loop(restaurants)
+            final_restaurant = list_loop(restaurants, "restaurants")
         elif change == "3":
-            final_transportation = list_loop(transportations)
+            final_transportation = list_loop(transportations, "transportations")
         elif change == "4":
-            final_entertainment = list_loop(entertainments)
+            final_entertainment = list_loop(entertainments, "entertainments")
         else:
             satisfied = input("Are you satisfied with your choices? y/n: ").lower()
             print(f"You will enjoy a day trip at {dest} where you will enjoy a meal at {rest}. You will use {trans} to get there. You will enjoy a {entertain}!")
             return
 display_title()
-final_destination = list_loop(destinations)
-final_restaurant = list_loop(restaurants)
-final_transportation = list_loop(transportations)
-final_entertainment = list_loop(entertainments)
+final_destination = list_loop(destinations, "destination")
+final_restaurant = list_loop(restaurants, "restaurant")
+final_transportation = list_loop(transportations, "transportation")
+final_entertainment = list_loop(entertainments, "entertainment")
 complete(final_destination,final_restaurant,final_transportation,final_entertainment)
 
