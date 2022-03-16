@@ -6,16 +6,15 @@ entertainments = ["movie", "concert", "hiking/biking Trail", "sporting event", "
 def display_title():
     print("Welcome to the Day Trip Generator!")
 def list_loop(list):
-    
     random_pick = random.choice(list)
     user_reply = input(f"How does {random_pick} sound for your? y/n: ").lower()
-    if user_reply == "y":
+    if user_reply == "y" or user_reply == "yes":
         return random_pick 
-    while user_reply == "n":
-        if user_reply == "n":
+    while user_reply == "n" or user_reply == "no":
+        if user_reply == "n" or user_reply == "no":
             random_pick = random.choice(list)
             user_reply = input(f"What about {random_pick}? y/n: ").lower()
-        if user_reply == "y":
+        if user_reply == "y" or user_reply == "yes":
             return random_pick
 
 def complete(dest, rest, trans, entertain):
@@ -33,7 +32,7 @@ def complete(dest, rest, trans, entertain):
         elif change == "4":
             final_entertainment = list_loop(entertainments)
         else:
-            satisfied = input("Are you satisfied with your choices? y/n: ")
+            satisfied = input("Are you satisfied with your choices? y/n: ").lower()
             print(f"You will enjoy a day trip at {final_destination} where you will enjoy a meal at {final_restaurant}. You will use {final_transportation} to get there. You will enjoy a {final_entertainment}!")
             return
 display_title()
