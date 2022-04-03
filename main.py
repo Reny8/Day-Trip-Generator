@@ -7,13 +7,18 @@ def display_title():
     print("Welcome to the Day Trip Generator!")
 def list_loop(list, topic):
     random_pick = random.choice(list)
-    user_reply = input(f"How does {random_pick} sound for your {topic}? y/n: ").lower()
-    if user_reply == "y" or user_reply == "yes":
+    while True:
+        user_reply = input(f"How does {random_pick} sound for your {topic}? y/n: ").lower()
+        if user_reply not in ('y','n'):
+            continue
+        else:
+            break
+    if user_reply == "y":
         return random_pick 
-    while user_reply == "n" or user_reply == "no":
+    while user_reply == "n":
         random_pick = random.choice(list)
         user_reply = input(f"What about {random_pick}? y/n: ").lower()
-        if user_reply == "y" or user_reply == "yes":
+        if user_reply == "y":
             return random_pick
 
 def complete(dest, rest, trans, entertain):
